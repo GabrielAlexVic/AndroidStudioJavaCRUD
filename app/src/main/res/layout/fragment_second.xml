@@ -4,32 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondFragment">
+    tools:context=".FirstFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        android:padding="20dp">
 
         <Button
-            android:id="@+id/button_second"
+            android:id="@+id/button_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/previous"
-            app:layout_constraintBottom_toTopOf="@id/textview_second"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            android:text="Cadastrar"
+            android:layout_below="@id/edit_phone"
+            android:layout_centerHorizontal="true"/>
         <TextView
-            android:id="@+id/textview_second"
+            android:id="@+id/text_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/lorem_ipsum"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_second" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:text="Tela de Cadastro de Fornecedor"
+            android:textSize="20dp"
+            android:layout_centerHorizontal="true"/>
+
+        <EditText
+            android:id="@+id/edit_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="18"
+            android:inputType="text"
+            android:text="Nome: "
+            android:layout_below="@+id/text_register"/>
+
+        <EditText
+            android:id="@+id/edit_addres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="18"
+            android:inputType="text"
+            android:text="Endereço: "
+            android:layout_below="@id/edit_name"/>
+
+        <EditText
+            android:id="@+id/edit_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="18"
+            android:inputType="number|phone"
+            android:text="Telefone: "
+            android:layout_below="@id/edit_addres"/>
+
+
+    </RelativeLayout>
 </androidx.core.widget.NestedScrollView>
