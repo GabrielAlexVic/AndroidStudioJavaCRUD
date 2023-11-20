@@ -11,13 +11,6 @@
         android:layout_height="match_parent"
         android:padding="20dp">
 
-        <Button
-            android:id="@+id/button_save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cadastrar"
-            android:layout_below="@id/edit_phone"
-            android:layout_centerHorizontal="true"/>
         <TextView
             android:id="@+id/text_register"
             android:layout_width="wrap_content"
@@ -26,14 +19,29 @@
             android:textSize="20dp"
             android:layout_centerHorizontal="true"/>
 
+        <TextView
+            android:id="@+id/supplier_nametxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_register"
+            android:text="Nome do Fornecedor: "
+            android:textSize="16dp"/>
+
         <EditText
             android:id="@+id/edit_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="18"
             android:inputType="text"
-            android:text="Nome: "
             android:layout_below="@+id/text_register"/>
+
+        <TextView
+            android:id="@+id/addres_suppliertxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_name"
+            android:text="Endereço: "
+            android:textSize="16dp"/>
 
         <EditText
             android:id="@+id/edit_addres"
@@ -41,8 +49,15 @@
             android:layout_height="wrap_content"
             android:ems="18"
             android:inputType="text"
-            android:text="Endereço: "
             android:layout_below="@id/edit_name"/>
+
+        <TextView
+            android:id="@+id/phone_nametxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_addres"
+            android:text="Telefone:  "
+            android:textSize="16dp"/>
 
         <EditText
             android:id="@+id/edit_phone"
@@ -50,8 +65,15 @@
             android:layout_height="wrap_content"
             android:ems="18"
             android:inputType="number|phone"
-            android:text="Telefone: "
             android:layout_below="@id/edit_addres"/>
+
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cadastrar Fornecedor"
+            android:layout_below="@id/edit_phone"
+            android:layout_centerHorizontal="true"/>
 
 
     </RelativeLayout>
