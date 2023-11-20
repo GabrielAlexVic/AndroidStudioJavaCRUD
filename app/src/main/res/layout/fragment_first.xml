@@ -4,32 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstFragment">
+    tools:context=".SecondFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        android:padding="20dp">
 
         <Button
-            android:id="@+id/button_first"
+            android:id="@+id/button_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/next"
-            app:layout_constraintBottom_toTopOf="@id/textview_first"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="Salvar"
+            android:layout_below="@+id/edit_price"/>
+        <Button
+            android:id="@+id/button_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cadastrar Fornecedor"
+            android:layout_below="@id/edit_price"
+            android:layout_toRightOf="@+id/button_save"/>
 
         <TextView
-            android:id="@+id/textview_first"
+            android:id="@+id/text_products"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/lorem_ipsum"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_first" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:text="Cadastro de Produtos"
+            android:textSize="20dp"
+            android:layout_centerHorizontal="true"/>
+        <EditText
+            android:id="@+id/edit_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome do Produto: "
+            android:ems="18"
+            android:inputType="text"
+            android:layout_below="@id/text_products"/>
+        <EditText
+            android:id="@+id/edit_brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Marca: "
+            android:ems="18"
+            android:inputType="text"
+            android:layout_below="@id/edit_product"/>
+        <EditText
+            android:id="@+id/edit_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preço: "
+            android:ems="18"
+            android:inputType="number"
+            android:layout_below="@id/edit_brand"/>
+
+
+    </RelativeLayout>
 </androidx.core.widget.NestedScrollView>
