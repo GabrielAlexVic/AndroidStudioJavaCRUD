@@ -11,20 +11,6 @@
         android:layout_height="match_parent"
         android:padding="20dp">
 
-        <Button
-            android:id="@+id/button_save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Salvar"
-            android:layout_below="@+id/edit_price"/>
-        <Button
-            android:id="@+id/button_register"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cadastrar Fornecedor"
-            android:layout_below="@id/edit_price"
-            android:layout_toRightOf="@+id/button_save"/>
-
         <TextView
             android:id="@+id/text_products"
             android:layout_width="wrap_content"
@@ -32,31 +18,66 @@
             android:text="Cadastro de Produtos"
             android:textSize="20dp"
             android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/produt_nametxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_products"
+            android:text="Nome do Produto: "
+            android:textSize="16dp"/>
+
         <EditText
             android:id="@+id/edit_product"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nome do Produto: "
             android:ems="18"
             android:inputType="text"
-            android:layout_below="@id/text_products"/>
+            android:layout_below="@id/produt_nametxt"/>
+
+        <TextView
+            android:id="@+id/brand_nametxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_product"
+            android:text="Marca do Produdo: "
+            android:textSize="16dp"/>
+
         <EditText
             android:id="@+id/edit_brand"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Marca: "
             android:ems="18"
             android:inputType="text"
-            android:layout_below="@id/edit_product"/>
+            android:layout_below="@id/brand_nametxt"/>
+        <TextView
+            android:id="@+id/price_nametxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_brand"
+            android:text="Preço do produto: "
+            android:textSize="16dp"/>
+
         <EditText
             android:id="@+id/edit_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Preço: "
             android:ems="18"
             android:inputType="number"
-            android:layout_below="@id/edit_brand"/>
-
+            android:layout_below="@id/price_nametxt"/>
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salvar"
+            android:layout_below="@+id/edit_price"
+            android:layout_marginLeft="48dp"/>
+        <Button
+            android:id="@+id/button_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cadastrar Fornecedor"
+            android:layout_below="@id/edit_price"
+            android:layout_toRightOf="@+id/button_save"/>
 
     </RelativeLayout>
 </androidx.core.widget.NestedScrollView>
