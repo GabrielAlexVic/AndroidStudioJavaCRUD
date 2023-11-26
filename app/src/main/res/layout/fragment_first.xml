@@ -27,7 +27,7 @@
             android:textSize="16dp"/>
 
         <EditText
-            android:id="@+id/edit_product"
+            android:id="@+id/edit_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="18"
@@ -38,7 +38,7 @@
             android:id="@+id/brand_nametxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/edit_product"
+            android:layout_below="@+id/edit_name"
             android:text="Marca do Produdo: "
             android:textSize="16dp"/>
 
@@ -64,20 +64,36 @@
             android:ems="18"
             android:inputType="number"
             android:layout_below="@id/price_nametxt"/>
+
+        <TextView
+            android:id="@+id/fornecedores_nametxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_price"
+            android:text="Preço do produto: "
+            android:textSize="16dp"/>
+        <Spinner
+            android:id="@+id/spinner_fornecedores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_price"
+            android:layout_marginTop="16dp" />
+
         <Button
             android:id="@+id/button_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Salvar"
-            android:layout_below="@+id/edit_price"
+            android:layout_below="@+id/spinner_fornecedores"
             android:layout_marginLeft="48dp"/>
         <Button
             android:id="@+id/button_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cadastrar Fornecedor"
-            android:layout_below="@id/edit_price"
+            android:layout_below="@id/spinner_fornecedores"
             android:layout_toRightOf="@+id/button_save"/>
+
 
     </RelativeLayout>
 </androidx.core.widget.NestedScrollView>

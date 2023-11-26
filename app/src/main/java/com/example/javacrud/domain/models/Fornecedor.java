@@ -1,17 +1,38 @@
 package com.example.javacrud.domain.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Fornecedor {
 
     private Integer id;
     private String nome;
     private String endereco;
     private String telefone;
+    private List<Produto> produtos;
 
     public Fornecedor(Integer id, String nome, String endereco, String telefone) {
         this.id = id;
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
+        this.produtos = new ArrayList<>();
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
+    }
+
+    public void adicionarProduto(Produto produto) {
+        this.produtos.add(produto);
+    }
+
+    public void removerProduto(Produto produto) {
+        this.produtos.remove(produto);
     }
 
     public Integer getId() {
