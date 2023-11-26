@@ -53,7 +53,7 @@ public class SecondFragment extends Fragment {
                 String endereco = enderecotxt.getText().toString();
                 String telefone = telefonetxt.getText().toString();
 
-                if(nometxt.length() == 0 && endereco.length() == 0  && telefonetxt.length() == 0 )
+                if(nometxt.length() == 0 && endereco.length() == 0  && telefonetxt.length() == 0)
                     Snackbar.make(view, "Preencha todos os campos", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 else{

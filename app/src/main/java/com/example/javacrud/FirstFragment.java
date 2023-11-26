@@ -81,13 +81,20 @@ public class FirstFragment extends Fragment {
                 String preco = String.valueOf(precotxt.getText());
                 String fornecedorSelecionadoNome = (String) fornecedoresNome.getSelectedItem();
 
-                if(nometxt.length() == 0 && marca.length() == 0  && preco.length() == 0 )
+                if(fornecedorSelecionadoNome == null) {
+                    Snackbar.make(view, "Não existem fornecedores", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                    NavHostFragment.findNavController(FirstFragment.this)
+                            .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                }
+
+                else if (nometxt.length() == 0 && marca.length() == 0  && preco.length() == 0) {
                     Snackbar.make(view, "Preencha todos os campos", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
+                }
+                
                 else{
-
                     //OBJ Produto
-
                     DbContext dbContext = new DbContext(view.getContext());
 
                     if(dbContext.salvarProduto(nome, marca, Double.valueOf(preco), dbContext.getProdutoPorFornedorNome(fornecedorSelecionadoNome))) {
