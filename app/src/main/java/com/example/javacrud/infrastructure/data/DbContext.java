@@ -1,26 +1,41 @@
 package com.example.javacrud.infrastructure.data;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 public class DbContext extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "Crud.db";
-    private static final int DATABASE_VERSION = 1;
-    private final String CREATE_TABLE = "CREATE TABLE Fornecedores (ID INTEGER PRIMARY KEY AUTOINCREMENT, Nome TEXT NOT NULL, Endereco TEXT NOT NULL, Telefone TEXT NOT NULL);";
+    private Context _context;
+    private static final String dbNome = "Fornecedores.db";
+    private static final int dbVersion = 1;
+    private String tabelaFornecedorNome = "Fornecedores";
+    private String tabelaProdutosNome = "Produtos";
 
     public DbContext(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        super(context, dbNome, null, dbVersion);
     }
+
+    private final String tabelaFornecedor = "CREATE TABLE " + tabelaFornecedorNome + " (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT , endereco TEXT, telefone TEXT);";
+    private final String tabelaProduto = "CREATE TABLE " + tabelaProdutosNome + " (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT , marca TEXT, preco REAL);";
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CREATE_TABLE);
+        db.execSQL(tabelaFornecedor);
+        db.execSQL(tabelaProduto);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("DROP TABLE IF EXISTS " + tabelaFornecedorNome);
+        onCreate(db);
     }
+
+    public SQLiteDatabase getSQLiteDb(){
+        return this.getReadableDatabase();
+    }
+
 }

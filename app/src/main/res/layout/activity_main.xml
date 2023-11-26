@@ -19,7 +19,11 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <include
+        android:id="@+id/includemain"
+        layout="@layout/content_main"
+        android:visibility="visible"/>
+
 
 
 

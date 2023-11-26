@@ -4,12 +4,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.javacrud.databinding.FragmentFirstBinding;
+import com.example.javacrud.domain.models.Fornecedor;
+import com.example.javacrud.domain.models.dao.FornecedorDAO;
+import com.google.android.material.snackbar.Snackbar;
 
 public class FirstFragment extends Fragment {
 
@@ -36,6 +41,7 @@ public class FirstFragment extends Fragment {
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);
             }
         });
+
     }
 
     @Override
