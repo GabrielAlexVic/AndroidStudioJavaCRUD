@@ -1,7 +1,6 @@
 package com.example.javacrud;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +12,8 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.javacrud.databinding.FragmentSecondBinding;
-import com.example.javacrud.domain.models.dao.FornecedorDAO;
 import com.example.javacrud.infrastructure.data.DbContext;
 import com.google.android.material.snackbar.Snackbar;
-
-import java.util.ArrayList;
 
 public class SecondFragment extends Fragment {
 
@@ -57,14 +53,14 @@ public class SecondFragment extends Fragment {
                 String endereco = enderecotxt.getText().toString();
                 String telefone = telefonetxt.getText().toString();
 
-                //Por algum motivo ele é non-null
                 if(nometxt.length() == 0 && endereco.length() == 0  && telefonetxt.length() == 0 )
                     Snackbar.make(view, "Preencha todos os campos", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 else{
+
                     //OBJ Fornecedor
-                    FornecedorDAO dao = new FornecedorDAO(view.getContext());
-                    if(dao.salvar(nome, endereco, telefone)) {
+                    DbContext dbContext = new DbContext(view.getContext());
+                    if(dbContext.salvarFornecedor(nome, endereco, telefone)) {
                         nometxt.setText("");
                         enderecotxt.setText("");
                         telefonetxt.setText("");
